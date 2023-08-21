@@ -1,21 +1,25 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react"
+import Button from "./button";
 
 // TODO: convert this to using css utils
 const ImageLink = ({ imgUrl, linkUrl, alt, size="42" }) => (
   <a href={linkUrl}>
-    <img
-      src={imgUrl}
-      alt={alt}
-      width={size}
-      height={size}
-      css={css`
-        background-color: white;
-        border-radius: 10px;
-        padding: 7px;
-        margin: 5px;
-      `}
-    />
+    <Button>
+      <img
+        src={imgUrl}
+        alt={alt}
+        width={size}
+        height={size}
+        // css={css`
+        //   background-color: white;
+        //   border-radius: 10px;
+        //   padding: 7px;
+        //   margin: 5px;
+        // `}
+      />
+    </Button>
+    
   </a>
 );
 

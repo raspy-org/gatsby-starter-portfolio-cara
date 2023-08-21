@@ -26,6 +26,19 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-omni-font-loader`,
+      options: {
+        enableListener: true,
+        preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
+        web: [
+          {
+            name: `IBM Plex Mono`,
+            file: `https://fonts.googleapis.com/css2?family=IBM+Plex+Mono`,
+          },
+        ],
+      },
+    },
+    {
       resolve: `@lekoarts/gatsby-theme-cara`,
       // See the theme's README for all available options
       options: {},

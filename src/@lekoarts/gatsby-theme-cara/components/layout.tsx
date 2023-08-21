@@ -11,6 +11,7 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
       styles={(t) => ({
         "*": {
           boxSizing: `inherit`,
+          fontFamily: `IBM Plex Mono`,
           "&:before": {
             boxSizing: `inherit`,
           },
@@ -26,8 +27,10 @@ const Layout = ({ children, className = `` }: LayoutProps) => (
           borderStyle: `none`,
         },
         pre: {
-          fontFamily: `monospace`,
           fontSize: `1em`,
+        },
+        body: {
+          overflowY: 'hidden'
         },
         "[hidden]": {
           display: `none`,
