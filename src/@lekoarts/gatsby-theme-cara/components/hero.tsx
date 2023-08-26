@@ -9,6 +9,7 @@ import { UpDown, UpDownWide } from "../styles/animations"
 import { Link } from 'gatsby';
 // @ts-ignore
 import Intro from "../sections/intro"
+import GlowingButton from "./glowing-button";
 
 const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => {
   const [colorMode, setColorMode] = useColorMode()
@@ -31,11 +32,16 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
         }}>
         <Box>Ross Rasmussen</Box>
         <Flex sx={{ gap: 30 }}>
-          <Themed.a as={Link} to="/">Home</Themed.a>  
+          {/* <Themed.a as={Link} to="/">Home</Themed.a>  
           <Themed.a as={Link} to="/work">Work</Themed.a>  
           <Themed.a as={Link} to="/about">About</Themed.a>  
           <Themed.a as={Link} to="/blog">Blog</Themed.a>  
-          <Themed.a as={Link} to="/resume">Resume</Themed.a>
+          <Themed.a as={Link} to="/resume">Resume</Themed.a> */}
+          <GlowingButton>Home</GlowingButton>  
+          <GlowingButton>Work</GlowingButton>  
+          <GlowingButton>About</GlowingButton>  
+          <GlowingButton>Blog</GlowingButton>  
+          <GlowingButton>Resume</GlowingButton>
           <Switch sx={{ outline: '1px solid white', width: '40px', textDecoration: 'strong' }} onClick={toggleColorMode} label={isDark ? `Light` : `Dark`} />
         </Flex>
       </Flex>

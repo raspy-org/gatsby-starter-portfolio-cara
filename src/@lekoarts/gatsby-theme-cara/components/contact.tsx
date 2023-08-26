@@ -8,25 +8,12 @@ import { UpDown, UpDownWide } from "../styles/animations"
 import Footer from "./footer"
 // @ts-ignore
 import ContactMDX from "../sections/contact"
-import ImageLink from "./image-link"
-import Button from "./button"
 
 const Contact = ({ offset, factor = 1 }: { offset: number; factor?: number }) => (
   <div>
     <Content speed={0.4} offset={offset} factor={factor}>
       <Inner>
         <ContactMDX />
-        <Button>Testing</Button>
-        <ImageLink
-          imgUrl="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-          linkUrl="https://github.com/raspy8766"
-          alt="LinkedIn"
-        />
-        <ImageLink
-          linkUrl="https://www.linkedin.com/in/rossrasmussen/"
-          imgUrl="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg"
-          alt="LinkedIn"
-        />
       </Inner>
     </Content>
     <Divider speed={0.1} offset={offset} factor={factor}>
