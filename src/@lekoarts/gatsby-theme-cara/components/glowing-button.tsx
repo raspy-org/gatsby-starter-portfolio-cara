@@ -1,6 +1,7 @@
 import { keyframes } from '@emotion/react';
 import React from 'react';
 import { Button, ThemeUICSSObject } from 'theme-ui'
+import useTextMeasurer from '../hooks/use-text-measurer'
 
 
 const GlowingButton = ({ children }) => {
@@ -10,10 +11,13 @@ const GlowingButton = ({ children }) => {
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
   `
-  
+
+  const width = useTextMeasurer({ value: children })
+  const padding = 36;
+
   const buttonStyle: ThemeUICSSObject = {
-    width: "220px",
     height: "50px",
+    minWidth: `${width + padding}px`,
     border: "none",
     outline: "none",
     color: "#fff",
