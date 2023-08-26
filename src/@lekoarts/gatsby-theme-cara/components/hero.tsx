@@ -9,8 +9,8 @@ import { UpDown, UpDownWide } from '../styles/animations'
 import { Link } from 'gatsby';
 // @ts-ignore
 import Intro from '../sections/intro'
-import GlowingButton from './glowing-button';
-import VortexButton from './vortex-button';
+import GlowingLinkButton from './glowing-button-link';
+import Name from './name';
 
 const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => {
   const [colorMode, setColorMode] = useColorMode()
@@ -31,18 +31,13 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
           width: '100%',
           p: 20,
         }}>
-        <Box>Ross Rasmussen</Box>
+        <Name>Ross Rasmussen</Name>
         <Flex sx={{ gap: 30 }}>
-          {/* <Themed.a as={Link} to='/'>Home</Themed.a>  
-          <Themed.a as={Link} to='/work'>Work</Themed.a>  
-          <Themed.a as={Link} to='/about'>About</Themed.a>  
-          <Themed.a as={Link} to='/blog'>Blog</Themed.a>  
-          <Themed.a as={Link} to='/resume'>Resume</Themed.a> */}
-          <GlowingButton>Home</GlowingButton>  
-          <GlowingButton>Work</GlowingButton>  
-          <GlowingButton>About</GlowingButton>  
-          <GlowingButton>Blog</GlowingButton>  
-          <GlowingButton>Resume</GlowingButton>
+          <GlowingLinkButton to='/'>Home</GlowingLinkButton>  
+          <GlowingLinkButton to='/work'>Work</GlowingLinkButton>  
+          <GlowingLinkButton to='/about'>About</GlowingLinkButton>  
+          <GlowingLinkButton to='/blog'>Blog</GlowingLinkButton>  
+          <GlowingLinkButton to='/resume'>Resume</GlowingLinkButton>
           <Flex sx={{ alignItems: 'center'  }}>
             <Box>
               <Switch onClick={toggleColorMode} sx={{ outline: '1px solid white', width: '40px', textDecoration: 'strong' }}  id='dark-mode' />

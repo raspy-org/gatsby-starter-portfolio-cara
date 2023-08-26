@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 
-const BouncingButton = ({ children, onClick, gradient }) => {
+const BouncingButton = ({ children, onClick, gradient, size }) => {
   const [clicked, setClicked] = useState(false);
 
   const springProps = useSpring({
@@ -14,16 +14,18 @@ const BouncingButton = ({ children, onClick, gradient }) => {
     setTimeout(() => {
       setClicked(false);
       onClick()
-    }, 50);
+    }, 800);
   };
 
+  const paddingTopBottom = 10
   return (
     <animated.button
       onClick={handleClick}
       style={{
+        maxHeight: `${size + paddingTopBottom * 2}px`,
         transform: springProps.scale.to(scale => `scale(${scale})`),
         margin: '0 10px',
-        padding: '10px 20px',
+        padding: `${paddingTopBottom}px 20px`,
         border: 'none',
         borderRadius: '5px',
         background: gradient ?? 'linear-gradient(327deg, #FF6CAB, #7366FF)',

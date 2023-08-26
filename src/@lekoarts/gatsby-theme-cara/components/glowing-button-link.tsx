@@ -1,10 +1,10 @@
 import { keyframes } from '@emotion/react';
 import React from 'react';
-import { Button, ThemeUICSSObject } from 'theme-ui'
+import { Button, ThemeUICSSObject, NavLink } from 'theme-ui'
 import useTextMeasurer from '../hooks/use-text-measurer'
 
 
-const GlowingButton = ({ children }) => {
+const GlowingLinkButton = ({ children, to }) => {
 
   const glowing = keyframes`
     0% { background-position: 0 0; }
@@ -64,9 +64,11 @@ const GlowingButton = ({ children }) => {
 
   return (
     <Button sx={buttonStyle}>
-      {children}
+      <NavLink href={to}>
+        {children}
+      </NavLink>
     </Button>
   );
 };
 
-export default GlowingButton;
+export default GlowingLinkButton;
