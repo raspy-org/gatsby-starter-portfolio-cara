@@ -1,25 +1,18 @@
 /** @jsx jsx */
-import {  jsx, Switch, useColorMode, Box, Flex, Label } from 'theme-ui';
-import Divider from '../elements/divider'
-import Inner from '../elements/inner'
-import Content from '../elements/content'
-import Svg from './svg'
-import { UpDown, UpDownWide } from '../styles/animations'
+import { Flex, jsx } from 'theme-ui';
+import Content from '../elements/content';
+import Divider from '../elements/divider';
+import Inner from '../elements/inner';
+import { UpDown, UpDownWide } from '../styles/animations';
+import Svg from './svg';
 /** @jsx jsx */
-import { Link } from 'gatsby';
 // @ts-ignore
-import Intro from '../sections/intro'
+import Intro from '../sections/intro';
+import DarkModeToggle from './dark-mode-toggle';
 import GlowingLinkButton from './glowing-button-link';
 import Name from './name';
 
 const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => {
-  const [colorMode, setColorMode] = useColorMode()
-  const isDark = colorMode === `dark`
-
-  const toggleColorMode = (e: any) => {
-    setColorMode(isDark ? `light` : `dark`)
-  }
-
   return (
     <div>
       <Flex
@@ -33,19 +26,10 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
         }}>
         <Name>Ross Rasmussen</Name>
         <Flex sx={{ gap: 30 }}>
-          <GlowingLinkButton to='/'>Home</GlowingLinkButton>  
-          <GlowingLinkButton to='/work'>Work</GlowingLinkButton>  
-          <GlowingLinkButton to='/about'>About</GlowingLinkButton>  
-          <GlowingLinkButton to='/blog'>Blog</GlowingLinkButton>  
+          <GlowingLinkButton to='/'>Home</GlowingLinkButton>
+          <GlowingLinkButton to='/about'>About</GlowingLinkButton>
           <GlowingLinkButton to='/resume'>Resume</GlowingLinkButton>
-          <Flex sx={{ alignItems: 'center'  }}>
-            <Box>
-              <Switch onClick={toggleColorMode} sx={{ outline: '1px solid white', width: '40px', textDecoration: 'strong' }}  id='dark-mode' />
-            </Box>
-            <Label htmlFor='dark-mode' sx={{ flex: 1 }}>
-              {isDark ? `Light` : `Dark`}
-            </Label>
-          </Flex>
+          <DarkModeToggle></DarkModeToggle>
         </Flex>
       </Flex>
       <Divider speed={0.2} offset={offset} factor={factor}>
