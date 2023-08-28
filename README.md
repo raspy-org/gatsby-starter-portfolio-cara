@@ -75,14 +75,14 @@ Have a look at the theme's README and files to see what options are available an
 
 The content of this project is defined in four `.mdx` files inside the theme's `sections` folder. You can override the files `intro.mdx`, `projects.mdx`, `about.mdx` and `contact.mdx`. This starter has overridden all files for you already.
 
-You have to use the `<ProjectCard />` component inside `projects.mdx` to display the cards. Example:
+You have to use the `<HighlightCard />` component inside `highlights.mdx` to display the cards. Example:
 
 ```md
-## Projects
+## Highlights
 
-<ProjectCard title="Freiheit" link="https://www.behance.net/gallery/58937147/Freiheit" bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)">
+<HighlightCard title="Freiheit" link="https://www.behance.net/gallery/58937147/Freiheit" bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)">
 This project is my entry to Adobe's #ChallengeYourPerspective contest.
-</ProjectCard>
+</HighlightCard>
 ```
 
 ### Change your `static` folder

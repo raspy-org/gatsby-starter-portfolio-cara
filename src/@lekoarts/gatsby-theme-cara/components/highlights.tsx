@@ -6,9 +6,9 @@ import Content from "../elements/content"
 import Svg from "./svg"
 import { UpDown, UpDownWide } from "../styles/animations"
 // @ts-ignore
-import ProjectsMDX from "../sections/projects"
+import HighlightsMDX from "../sections/highlights"
 
-const Projects = ({ offset, factor = 2 }: { offset: number; factor?: number }) => (
+const Highlights = ({ offset, factor = 2 }: { offset: number; factor?: number }) => (
   <div>
     <Divider
       bg="linear-gradient(to right, SlateBlue 0%, DeepSkyBlue 100%)"
@@ -27,7 +27,7 @@ const Projects = ({ offset, factor = 2 }: { offset: number; factor?: number }) =
             h2: { gridColumn: `-1/1`, color: `white !important` },
           }}
         >
-          <ProjectsMDX />
+          <HighlightsMDX />
         </div>
       </Inner>
     </Content>
@@ -56,4 +56,4 @@ const Projects = ({ offset, factor = 2 }: { offset: number; factor?: number }) =
   </div>
 )
 
-export default Projects
+export default Highlights

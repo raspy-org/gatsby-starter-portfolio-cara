@@ -1,14 +1,14 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-type ProjectCardProps = {
+type HighlightCardProps = {
   link: string
   title: string
   children: React.ReactNode
   bg: string
 }
 
-const ProjectCard = ({ link, title, children, bg }: ProjectCardProps) => (
+const HighlightCard = ({ link, title, children, bg, imgUrl }: HighlightCardProps) => (
   <a
     href={link}
     target="_blank"
@@ -31,20 +31,27 @@ const ProjectCard = ({ link, title, children, bg }: ProjectCardProps) => (
       },
     }}
   >
-    <div sx={{ opacity: 0.85, textShadow: `0 2px 10px rgba(0, 0, 0, 0.3)` }}>{children}</div>
+
     <div
       sx={{
+        display: 'flex',
+        alignItems: 'center',
         textTransform: `uppercase`,
         letterSpacing: `wide`,
         pt: 4,
-        fontSize: [4, 5],
         fontWeight: `medium`,
         lineHeight: 1,
       }}
     >
-      {title}
+      <img
+        src={imgUrl}
+        width={100}
+        height={100}
+      />
+      <h2 sx={{ marginLeft: '5px', fontSize: 40 }}>{title}</h2>
     </div>
+    <div sx={{ opacity: 0.85, textShadow: `0 2px 10px rgba(0, 0, 0, 0.3)` }}>{children}</div>
   </a>
 )
 
-export default ProjectCard
+export default HighlightCard
