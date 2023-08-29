@@ -3,12 +3,16 @@ import { jsx } from "theme-ui"
 
 type HighlightCardProps = {
   link: string
-  title: string
+  title?: string
+  imgUrl?: string;
+  imgWidth?: number;
+  imgHeight?: number;
+  img?: React.ReactNode;
   children: React.ReactNode
   bg: string
 }
 
-const HighlightCard = ({ link, title, children, bg, imgUrl }: HighlightCardProps) => (
+const HighlightCard = ({ link, title, children, bg, imgUrl, imgWidth = 100,  imgHeight = 100, img }: HighlightCardProps) => (
   <a
     href={link}
     target="_blank"
@@ -43,12 +47,8 @@ const HighlightCard = ({ link, title, children, bg, imgUrl }: HighlightCardProps
         lineHeight: 1,
       }}
     >
-      <img
-        src={imgUrl}
-        width={100}
-        height={100}
-      />
-      <h2 sx={{ marginLeft: '5px', fontSize: 40 }}>{title}</h2>
+      {img ?? (<img src={imgUrl} width={imgWidth} height={imgHeight} />)}
+      {title && (<h2 sx={{ marginLeft: '5px', fontSize: 40 }}>{title}</h2>)}
     </div>
     <div sx={{ opacity: 0.85, textShadow: `0 2px 10px rgba(0, 0, 0, 0.3)` }}>{children}</div>
   </a>
