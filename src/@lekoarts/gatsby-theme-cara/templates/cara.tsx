@@ -9,16 +9,11 @@ import { Box, Grid } from "theme-ui";
 
 const Cara = () => (
   <Layout>
-    {/* <Grid sx={{
-      gridTemplateAreas: '"header" "."'
-    }}> */}
-      <Parallax pages={4}>
+      <Parallax pages={3}>
         <Header offset={0} factor={1} />
         <Highlights offset={1} factor={1} />
-        <About offset={2} factor={1} />
-        <Contact offset={3} factor={1} />
+        <Contact offset={2} factor={1} />
       </Parallax>
-    {/* </Grid> */}
   </Layout>
 )
 
