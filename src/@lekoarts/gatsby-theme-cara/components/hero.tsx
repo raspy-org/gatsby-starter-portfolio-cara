@@ -27,7 +27,6 @@ const Header = ({ offset, factor = 1 }: { offset: number; factor?: number }) => 
         <Name>Ross Rasmussen</Name>
         <Flex sx={{ gap: 30 }}>
           <GlowingLinkButton to='/'>Home</GlowingLinkButton>
-          <GlowingLinkButton to='/about'>About</GlowingLinkButton>
           <GlowingLinkButton to='/resume'>Resume</GlowingLinkButton>
           <DarkModeToggle></DarkModeToggle>
         </Flex>

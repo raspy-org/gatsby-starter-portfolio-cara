@@ -13,7 +13,7 @@ const NotFound = () => (
       <div>
         <Content sx={{ variant: `texts.bigger` }} speed={0.4} offset={0} factor={1}>
           <Inner>
-            <Themed.h4>About</Themed.h4>
+            <img src='./resume.jpeg'/>
           </Inner>
         </Content>
       </div>
