@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 
 type HighlightCardProps = {
   link: string
-  title?: string
+  title?: React.ReactNode | string;
   imgUrl?: string;
   imgWidth?: number;
   imgHeight?: number;
@@ -40,7 +40,6 @@ const HighlightCard = ({ link, title, children, bg, imgUrl, imgWidth = 100,  img
       sx={{
         display: 'flex',
         alignItems: 'center',
-        textTransform: `uppercase`,
         letterSpacing: `wide`,
         pt: 4,
         fontWeight: `medium`,
@@ -48,7 +47,12 @@ const HighlightCard = ({ link, title, children, bg, imgUrl, imgWidth = 100,  img
       }}
     >
       {img ?? (<img src={imgUrl} width={imgWidth} height={imgHeight} />)}
-      {title && (<h2 sx={{ marginLeft: '5px', fontSize: 40 }}>{title}</h2>)}
+      {typeof title === 'string' ? <h2 sx={{
+      marginLeft: '5px',
+      fontSize: 35,
+    }}>
+      {title}
+    </h2> : title}
     </div>
     <div sx={{ opacity: 0.85, textShadow: `0 2px 10px rgba(0, 0, 0, 0.3)` }}>{children}</div>
   </a>
